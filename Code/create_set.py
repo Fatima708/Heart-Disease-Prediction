@@ -1,6 +1,6 @@
 
 import pandas as pd
-filepath = '/Users/kumarpersonal/Downloads/Heart-Disease-Pred/Data/final_data.csv'
+filepath = r'C:/Users/ADMIN/Documents/GitHub/Heart-Disease-Prediction/Data/final_data.csv'
 data = pd.read_csv(filepath)
 
 data.shape
@@ -30,9 +30,9 @@ test.head(3)
 valid = pd.concat([X_val, y_val], axis=1)
 valid.head(3)
 
-train.to_csv('/Users/kumarpersonal/Downloads/Heart-Disease-Pred/Data/train.csv', index=False)
-test.to_csv('/Users/kumarpersonal/Downloads/Heart-Disease-Pred/Data/test.csv', index=False)
-valid.to_csv('/Users/kumarpersonal/Downloads/Heart-Disease-Pred/Data/val.csv', index=False)
+train.to_csv(r'C:/Users/ADMIN/Documents/GitHub/Heart-Disease-Prediction/Data/train.csv', index=False)
+test.to_csv(r'C:/Users/ADMIN/Documents/GitHub/Heart-Disease-Prediction/Data/test.csv', index=False)
+valid.to_csv(r'C:/Users/ADMIN/Documents/GitHub/Heart-Disease-Prediction/Data/val.csv', index=False)
 
 df = pd.concat([train, valid, test], axis=0)
 df.shape[0]
