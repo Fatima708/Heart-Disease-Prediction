@@ -8,8 +8,8 @@ import tensorflow as tf
 from tensorflow import keras
 
 # Loading the train & test data -
-train = pd.read_csv('/Users/kumarpersonal/Downloads/Heart-Disease-Pred/Data/train.csv')
-test = pd.read_csv('/Users/kumarpersonal/Downloads/Heart-Disease-Pred/Data/test.csv')
+train = pd.read_csv(r'C:/Users/ADMIN/Documents/GitHub/Heart-Disease-Prediction/Data/train.csv')
+test = pd.read_csv(r'C:/Users/ADMIN/Documents/GitHub/Heart-Disease-Prediction/Data/test.csv')
 
 # Splitting the data into independent & dependent variables -
 X_train, y_train =  base.splitter(train, y_var='target')
@@ -33,7 +33,7 @@ model = keras.Sequential([
 adam=keras.optimizers.Adam(learning_rate=0.0001)
 model.compile(optimizer=adam, loss='binary_crossentropy', metrics=['accuracy'])
 
-model.summary()
+print(model.summary())
 
 es = tf.keras.callbacks.EarlyStopping(monitor='val_accuracy', min_delta=1e-3, patience=10, mode='max', verbose=0)
 mc = tf.keras.callbacks.ModelCheckpoint(filepath='model.h5', save_best_only=True, save_weights_only=True)
